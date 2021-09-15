@@ -1,0 +1,15 @@
+.success {
+    display: flex;
+    width: 90%;
+    background-color: rgb(51, 148, 51);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 300px;
+    margin: 10px;
+    span {
+        font-size: 1.2rem;
+        color: #fff;
+        font-weight: 800;
+    }
+}

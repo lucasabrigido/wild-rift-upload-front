@@ -4,6 +4,7 @@ import Axios from 'axios';
 import {baseUrl, urlPaths} from '../../utils/constants';
 import Upload from '../../components/upload';
 import FormUpload from '../../components/form';
+import Success from '../../components/success';
 
 import './styles.scss';
 
@@ -20,6 +21,7 @@ export default function PageUpload() {
   const [fileNames, setFileNames] = useState([]);
   const [attachments, setAttachments] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleDrop = acceptedFiles => {
     setFileNames(state => [...state, ...acceptedFiles.map(file => file.name)]);
@@ -33,8 +35,9 @@ export default function PageUpload() {
     e.preventDefault();
     setLoading(true);
     let files = [];
+    let promises = [];
     for (const file of attachments) {
-        await new Promise((resolve, reject) => {
+      promises.push(new Promise((resolve, reject) => {
           const reader = new FileReader()
           reader.onabort = () => reject();
           reader.onerror = () => reject();
@@ -54,14 +57,16 @@ export default function PageUpload() {
             resolve();
           }
           reader.readAsArrayBuffer(file)
-        });
+        }));
     }
     try {
+      await Promise.all(promises);
       await Axios.post(baseUrl + urlPaths.uploadSave, {
         photos: files,
         ...dataForm,
         birthdate: new Date(dataForm.birthdate).toISOString(),
       });
+      setSuccess(true);
     } catch(err){
       console.log(err);
       console.log(err.message);
@@ -71,9 +76,17 @@ export default function PageUpload() {
     }
   };
   return (
-    <div className='form-upload' >
-      <Upload onChange={handleDrop} fileNames={fileNames} />
-      <FormUpload onClick={save} hasAttachments={attachments.length > 0} loading={loading} data={dataForm} onChange={onChangeData} />
-    </div>
+    <>
+      {
+        success ? (
+          <Success/>
+        ) : (
+          <div className='form-upload' >
+            <Upload onChange={handleDrop} fileNames={fileNames} />
+            <FormUpload onClick={save} hasAttachments={attachments.length > 0} loading={loading} data={dataForm} onChange={onChangeData} />
+          </div>
+        )
+      }
+    </>
   );
 }
