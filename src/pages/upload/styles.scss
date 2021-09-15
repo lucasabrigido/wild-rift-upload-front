@@ -1,0 +1,10 @@
+.form-upload{
+    width: 58%;
+    margin-top: 11px;
+}
+
+@media(max-width: 760px) {
+    .form-upload{
+        width: 98%;
+    }
+}
