@@ -1,14 +1,27 @@
 .custom-button {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
+    width: calc(100% + 20px);
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 800;
     border: none;
-    width: 100%;
-    span {
-        font-size: 1.8em;
-        color: #000;
-        font-weight: bolder;
+    cursor: pointer;
+    outline: none;
+}
+
+.default {
+    background-color: #0bc4e2;
+    color: #fff;
+    &:hover {
+        background-color: rgb(0,178,207);
+    }
+}
+
+.link {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    &:hover {
+        color: #9ef2ff;
     }
 }

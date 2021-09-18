@@ -1,14 +1,18 @@
 import React from 'react';
-import Upload from './pages/upload';
-import wild from './assets/images/wild.jpg';
+import {Router} from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import Routes from './routes';
 
 import './styles.scss';
+
+export const history = createBrowserHistory();
 
 function App() {
   return (
     <div className='container-all'>
-      <img src={wild} className='image-bg' alt='wild' />
-      <Upload/>
+      <Router history={history}>
+        <Routes/>
+      </Router>
     </div>
   );
 }

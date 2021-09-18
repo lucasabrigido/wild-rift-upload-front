@@ -1,5 +1,6 @@
 body, #root, .form-upload {
-    background-color: #3ec3fd;
+    // background-color: #3ec3fd;
+    background-color: #3dbcd0;
 }
 body {
     margin: 0;
@@ -15,4 +16,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+* {
+    font-family: 'Roboto', sans-serif;
 }

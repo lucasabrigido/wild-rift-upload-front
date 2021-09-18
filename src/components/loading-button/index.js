@@ -2,11 +2,16 @@ import React from 'react';
 import logo from '../../assets/gifs/loading.gif';
 import './styles.scss';
 
-const LoadingButton = ({loading, children, className, style, disabled, text, ...props}) => {
+export const buttonTypes = {
+    default: 'default',
+    link: 'link',
+}
+
+const LoadingButton = ({loading, children, type='default', className, style, disabled, text, ...props}) => {
     return (
-        <button className={`custom-button ${className || ''}`} style={style} disabled={loading ? loading : disabled} {...props} >
+        <button className={`custom-button ${buttonTypes[type] || ''} ${className || ''}`} style={style} disabled={loading ? loading : disabled} {...props} >
             {loading && <img style={{width: '30px', height: '30px', marginRight: '5px'}} src={logo} alt="loading..." />}
-            {text && <span style={{fontSize: '1.8em', color: '#000', fontWeight: 'bolder'}} >{text}</span>}
+            {text && text}
             {children}
         </button>
     )
