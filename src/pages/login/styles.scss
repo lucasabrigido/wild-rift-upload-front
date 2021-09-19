@@ -1,0 +1,110 @@
+.container-login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form-login {
+        .container-login-actions {
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+            .button-login {
+                width: 100%;
+            }
+            .container-last-actions {
+                display: flex;
+                justify-content: space-between;
+                .container-checkbox {
+                    display: flex;
+                    align-items: center;
+                    input {
+                        cursor: pointer;
+                    }
+                    span {
+                        font-size: 0.8rem;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        color: #4d4d6f;
+                    }
+                }
+                .forgot-password {
+                    width: auto;
+                    color: #02c3ff;
+                    &:hover {
+                        color: #74dff0;
+                    }
+                }
+            }
+        }
+        .container-register {
+            display: flex;
+            width: 56%;
+            position: relative;
+            top: 79px;
+            span {
+                font-size: 0.8rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: #4d4d6f;
+                width: 100%;
+            }
+            .button-register {
+                width: 100%;
+                color: #1976d2;
+                padding: 0;
+                &:hover {
+                    color: #74dff0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-device-width: 480px){
+    .container-login  {
+        .form-login {
+            .container-register {
+                top: 11px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 482px){
+    .container-login  {
+        .form-login {
+            .container-register {
+                width: 90%;
+            }
+        }
+    }
+}
+@media (max-width: 321px){
+    .container-login  {
+        .form-login {
+            .container-login-actions {
+                width: 65%;
+                .container-last-actions {
+                    flex-direction: column;
+                    row-gap: 5px;
+                    margin-top: 6px;
+                    align-items: flex-start;
+                    .container-checkbox > span {
+                        font-size: 0.7rem;
+                    }       
+                    button {
+                        padding: 0;
+                    }
+                }
+            }
+            .container-register {
+                width: 65%;
+                button, span {
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+}
