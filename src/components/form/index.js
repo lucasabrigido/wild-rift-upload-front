@@ -18,7 +18,6 @@ const FormUpload = ({data, onClick, onChange, loading, hasAttachments}) => {
                 <div className='container-checkbox' >
                     <input type='checkbox' value={data.acceptTerms} onChange={({target})=>onChange(target.checked, 'acceptTerms')} />
                     <span>ao enviar seus dados você CONCORDA com nossos <a target="_blank" href='https://dev-wild-rift-resources-file-bucket.s3.amazonaws.com/resources/termo-de-uso-v1.pdf'>termos de uso</a> </span>
-
                 </div>
                 <LoadingButton
                     text='enviar'
