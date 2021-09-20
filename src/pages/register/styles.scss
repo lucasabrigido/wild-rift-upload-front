@@ -1,0 +1,106 @@
+.form-register {
+    width: 552px;
+    .container-register-actions {
+        row-gap: 15px;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        .group-two {
+            display: flex;
+            justify-content: space-between;
+            .input-group-two.password {                
+                svg {
+                    cursor: pointer;
+                }
+            }
+            .input-group-two {
+                width: 45%;
+            }
+            .select-sexo-register {
+                width: 45%;
+            }
+        }
+    }
+    .container-button-on-register {
+        .container-terms-button {
+            .button-on-register {
+                width: 100%;
+            }
+            .container-checkbox {
+                width: 100%;
+                display: flex;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                margin-bottom: 10px;
+                input {
+                    width: 54px;
+                    height: 21px;
+                }
+                span {
+                    color: #4d4d6f;
+                    font-family: sans-serif;
+                    text-align: initial;
+                    margin-left: 10px;
+                    font-size: 1em;
+                    font-weight: 800;
+                    a {
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-device-width: 380px) {
+    .main-form.form-register {
+        height: auto;
+        top: 43px;
+    }
+}
+
+@media(max-width: 380px) {
+    .form-register {
+        height: 85%;
+        .container-register-actions {
+            .group-two {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                row-gap: 15px;
+                .input-group-two {
+                    width: 100%;
+                }
+                .select-sexo-register {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 257px) {
+    .form-register {
+        height: 85%;
+        .container-register-actions {
+            width: 50%;
+        }
+        .container-button-on-register {
+            .container-terms-button > .container-checkbox {
+                input {
+                    width: auto;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+// @media only screen and (max-device-width: 480px){
+//     .main-form {
+//         bottom: 0px;
+//         height: 100%;
+//     }
+// }
