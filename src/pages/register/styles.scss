@@ -1,5 +1,8 @@
 .form-register {
     width: 552px;
+    .container-title > h1 {
+        color: #00000099;
+    }
     .container-register-actions {
         row-gap: 15px;
         display: flex;

@@ -5,6 +5,7 @@ import Header from '../components/header';
 import Upload from '../pages/upload';
 import Login from '../pages/login';
 import Register from '../pages/register';
+import BottomNavigation from '../components/bottom-navigation';
 
 
 export default function Routes() {
@@ -17,6 +18,7 @@ export default function Routes() {
                 <Route exact path='/upload' component={Upload} />
                 <Redirect to='/register' />
             </Switch>
+            <BottomNavigation/>
         </>
     );
 }
