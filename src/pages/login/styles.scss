@@ -5,6 +5,9 @@
     justify-content: center;
     align-items: center;
     .form-login {
+        .container-title > h1 {
+            color: #00000099;
+        }
         .container-login-actions {
             display: flex;
             flex-direction: column;
