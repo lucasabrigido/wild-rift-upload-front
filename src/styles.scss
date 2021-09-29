@@ -1,0 +1,32 @@
+body, #root, .form-upload {
+    // background-color: #3ec3fd;
+    // background-color: #3c9ae2;
+    // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(63, 63, 167) 35%, rgba(0,212,255,1) 100%);
+    // background: #3c9ae2;
+    background: linear-gradient(30deg,#551ED7 20%,#6E87FF 60%);
+}
+#root {
+    width: 100%;
+    height: 100%;
+}
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.image-bg {
+    width: 100%;
+    height: 196px;
+    object-fit: unset;
+}
+.container-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+}
+* {
+    font-family: 'Roboto', sans-serif;
+}
